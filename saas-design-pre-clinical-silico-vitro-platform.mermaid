@@ -1,0 +1,83 @@
+graph TD
+    subgraph UI_Layer [User Interface Layer - Firebase Hosting/CDN]
+        A[Web Portal: Research Dashboard]
+        B[Mobile App: Monitoring & Alerts]
+    end
+
+    subgraph Backend_Services [Microservices Layer - GKE/Cloud Run]
+        C[Experiment Management Service]
+        D[In Silico Modeling Service]
+        E[Lab Automation Orchestrator]
+        F[Data Analytics Service]
+        G[Compound Library Service]
+        Auth[Firebase Auth Service]
+    end
+
+    subgraph Integration_Layer [Integration & IoT Layer - Cloud IoT Core/Dataflow]
+        H[IoT Gateway & Edge Compute]
+    end
+
+    subgraph Data_Layer [Data & Storage Layer - Pub/Sub, BigQuery, Cloud SQL]
+        I[Event Broker: Cloud Pub/Sub]
+        J[Data Warehouse: BigQuery]
+        K[Database: Cloud SQL - Aurora/Postgres]
+        S3[Data Lake: Cloud Storage]
+    end
+
+    subgraph In_Vitro_Layer [In Vitro Lab Hardware]
+        L[Robotic Liquid Handlers]
+        M[Plate Readers & Sensors]
+        N[Incubators & Storage Units]
+    end
+
+    %% Connections and Data Flow
+
+    %% UI to Services
+    A --> Auth
+    A --> C
+    A --> D
+    A --> F
+    B --> G
+    B --> F
+
+    %% Services via Event Broker
+    C -.-> I
+    D -.-> I
+    E -.-> I
+    F -.-> I
+    G -.-> I
+    Auth -.-> I
+
+    %% Event Broker to Services/Data
+    I --> C
+    I --> D
+    I --> E
+    I --> F
+    I --> G
+    I --> J
+    I --> K
+    I --> S3
+
+    %% Integration Layer & Lab
+    E -.-> H
+    H --> L
+    H --> M
+    H --> N
+    L -.-> H
+    M -.-> H
+    N -.-> H
+
+    %% Data Flow back to services/storage/analytics
+    H -.-> I
+    J <-.- F
+    K <-.- G
+    J --> D
+    S3 <-- F
+    S3 --> D
+
+    style UI_Layer fill:#f9f,stroke:#333,stroke-width:2px
+    style Backend_Services fill:#ccf,stroke:#333,stroke-width:2px
+    style Integration_Layer fill:#cfc,stroke:#333,stroke-width:2px
+    style Data_Layer fill:#ffc,stroke:#333,stroke-width:2px
+    style In_Vitro_Layer fill:#fcc,stroke:#333,stroke-width:2px
+    linkStyle default stroke:#333,stroke-width:1.5px
