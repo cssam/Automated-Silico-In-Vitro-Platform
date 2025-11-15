@@ -53,3 +53,9 @@ The frontends must manage the multi-tenant context.
 By shifting to a multi-tenant design, the platform can efficiently scale to serve many pharmaceutical clients while keeping their valuable research data isolated and secure.
 
 ![Enhanced Software Architecture Pre Clinical](./saas-design-pre-clinical-silico-vitro-platform.svg)
+
+#### [D.1 Multi Cloud Tools for SaaS Implementation with Pre Clinical](./Multi-Cloud-Tools-for-SaaS-Pre-Clinical.md)
+
+#### [D.2 AWS Single Cloud Tools for In Silico-In Vitro SaaS Platform with Pre Clinical](./AWS-Single-Cloud-Tools-for-SaaS-Pre-Clinical.md)
+
+#### [D.3 GCP Single Cloud Tools for In Silico-In Vitro SaaS Platform with Pre Clinical](./GCP-Single-Cloud-Tools-for-Saas_Pre-Clinical.md)
