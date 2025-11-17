@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Status Dashboard UI Concept</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        .badge-running { background-color: #e0f7fa; color: #007bff; }
+        .badge-complete { background-color: #e8f5e9; color: #28a745; }
+        .badge-failed { background-color: #ffebee; color: #dc3545; }
+        .badge-queued { background-color: #fafafa; color: #6c757d; }
+        .progress-container {
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        .progress-bar {
+            width: 50%; /* Example width, would be dynamic */
+            height: 100%;
+            background-color: #007bff;
+            transition: width 0.4s ease;
+        }
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        .btn-details { padding: 8px 12px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        .btn-cancel { padding: 8px 12px; background-color: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-header">
+    <h1>Real-time Status Dashboard</h1>
+    <button>[Add New Experiment]</button>
+</div>
+
+<p>Global Status: All Systems Operational | 12 Active Jobs</p>
+
+<div class="status-grid">
+    
+    <!-- Example Card 1: Running Job -->
+    <div class="card">
+        <div class="card-header">
+            <strong>Tox Screen v1.2 (TS-001)</strong>
+            <span class="status-badge badge-running">Running</span>
+        </div>
+        <p>Hardware: Liquid Handler A</p>
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 50%;"></div>
+        </div>
+        <small>Step 12 of 24: Dispensing Compound X</small>
+        <div class="card-footer">
+            <button class="btn-details">View Details</button>
+            <button class="btn-cancel">Cancel Run</button>
+        </div>
+    </div>
+
+    <!-- Example Card 2: Completed Job -->
+    <div class="card">
+        <div class="card-header">
+            <strong>Efficacy Test v3.1 (ET-045)</strong>
+            <span class="status-badge badge-complete">Complete</span>
+        </div>
+        <p>Hardware: Plate Reader 3</p>
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 100%; background-color: #28a745;"></div>
+        </div>
+        <small>Finished: 2 minutes ago</small>
+        <div class="card-footer">
+            <button class="btn-details">View Details</button>
+        </div>
+    </div>
+
+    <!-- Example Card 3: Failed Job -->
+    <div class="card">
+        <div class="card-header">
+            <strong>Binding Affinity (BA-112)</strong>
+            <span class="status-badge badge-failed">Failed</span>
+        </div>
+        <p>Hardware: Incubator 1</p>
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 20%; background-color: #dc3545;"></div>
+        </div>
+        <small>Error: Incubation temp exceeded limit</small>
+        <div class="card-footer">
+            <button class="btn-details">View Details</button>
+            <button class="btn-cancel" style="background-color: #6c757d;">Clear Error</button>
+        </div>
+    </div>
+
+       <!-- Example Card 4: Queued Job -->
+    <div class="card">
+        <div class="card-header">
+            <strong>Tox Screen v1.3 (TS-002)</strong>
+            <span class="status-badge badge-queued">Queued</span>
+        </div>
+        <p>Hardware: Liquid Handler A</p>
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 0%; background-color: #6c757d;"></div>
+        </div>
+        <small>Waiting for hardware availability</small>
+        <div class="card-footer">
+            <button class="btn-details">View Details</button>
+            <button class="btn-cancel">Cancel Run</button>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

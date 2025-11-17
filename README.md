@@ -63,4 +63,12 @@ In summary, an automated in silico-in vitro platform is a powerful, modern resea
 
 ##### [D.1.6 Data Analytics MicroService](./Data-Analytics-MicoService.md)
 
+##### [D.3.1 GCP Pub/Sub Architecture & Design](./GCP-pub-sub-architecture&design.md)
+
+### [E. UI Layer Architecture & Design](./UI-layer-architecture&design.md)
+
+### [E.1 UI Web Portal Experimental Design Studio](./UI-webportal-data-visualization-tool.md)
+
+### [E.2 UI Web Portal Data Visualization Tool](./UI-webportal-data-visualization-tool.md)
+
 ### [X. Enhanced Software Architcture & Design with Post Clinical](./Enhanced-Software-Architcture-&-Design-with-Post-Clinical.md)

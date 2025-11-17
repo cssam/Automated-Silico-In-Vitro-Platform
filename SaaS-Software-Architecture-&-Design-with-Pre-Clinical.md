@@ -1,4 +1,4 @@
-# SaaS Software Architecture & Design for Pharmaceutical Receasrch and Pre Clinical
+# SaaS Software Architecture & Design for Pharmaceutical Research and Pre Clinical
 
 Implementing the automated in silico-in vitro platform as a **SaaS (Software as a Service)** offering fundamentally changes the architectural requirements. The primary concern shifts to robust **multi-tenancy**—safely and efficiently serving multiple distinct clients from a single, shared infrastructure.
 

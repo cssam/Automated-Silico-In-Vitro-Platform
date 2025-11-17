@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Visualization Dashboard UI Concept</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      .dashboard-container {
+        display: flex;
+        min-height: 100vh;
+      }
+      .sidebar-filters {
+        flex-basis: 250px;
+        background-color: #fff;
+        padding: 20px;
+        border-right: 1px solid #ccc;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+      }
+      .main-content {
+        flex-grow: 1;
+        padding: 20px;
+      }
+      .visualization-area {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        height: 500px; /* Placeholder height for actual chart */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px dashed #ccc;
+      }
+      .data-table-area {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2,
+      h3 {
+        color: #0056b3;
+      }
+      .filter-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      select,
+      input[type="date"],
+      button {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Left Sidebar: Interactive Filters Panel -->
+      <div class="sidebar-filters">
+        <h2>Filters</h2>
+        <div class="filter-group">
+          <label for="experimentId">Experiment ID</label>
+          <input type="text" id="experimentId" placeholder="e.g., TS-001-A" />
+        </div>
+        <div class="filter-group">
+          <label for="dateRange">Date Range</label>
+          <input type="date" id="dateRangeStart" />
+          <input type="date" id="dateRangeEnd" />
+        </div>
+        <div class="filter-group">
+          <label for="compoundType">Compound Type</label>
+          <select id="compoundType">
+            <option>All</option>
+            <option>Type A</option>
+            <option>Type B</option>
+          </select>
+        </div>
+        <button>Apply Filters</button>
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="main-content">
+        <h1>Research Analysis Dashboard</h1>
+
+        <!-- Main Visualization Area (Center) -->
+        <div class="visualization-area">
+          <!-- This area would be populated by Plotly.js or D3.js charts (e.g., Dose-Response Curve) -->
+          <p>
+            <strong
+              >[Interactive Chart Placeholder: Heat Map or Dose-Response
+              Curve]</strong
+            >
+          </p>
+        </div>
+
+        <!-- Data Table View (Bottom Panel) -->
+        <div class="data-table-area">
+          <h3>Raw Data Table View</h3>
+          <button style="width: auto">[Export CSV]</button>
+          <p>
+            <em
+              >Table displaying filtered numerical data points goes here...</em
+            >
+          </p>
+          <table>
+            <!-- Mock table structure -->
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

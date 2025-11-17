@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experiment Design Studio (EDS) UI Layout Concept</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      .container {
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .panel {
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+      .sidebar-left {
+        flex-basis: 20%;
+        background-color: #e9e9e9;
+        min-height: 600px;
+      }
+      .main-area {
+        flex-basis: 55%;
+        background-color: #ffffff;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        padding: 0 20px;
+      }
+      .sidebar-right {
+        flex-basis: 25%;
+        background-color: #e9e9e9;
+        min-height: 600px;
+      }
+      h2,
+      h3 {
+        color: #0056b3;
+      }
+      .step {
+        padding: 10px;
+        margin-bottom: 5px;
+        cursor: pointer;
+      }
+      .step.active {
+        background-color: #0056b3;
+        color: white;
+        border-radius: 4px;
+      }
+      .validation-item.success {
+        color: green;
+      }
+      .validation-item.error {
+        color: red;
+      }
+      .validation-item.warning {
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Experiment Design Studio (EDS) UI Layout Concept</h1>
+
+    <div class="container">
+      <!-- Left Sidebar: Workflow Navigator -->
+      <div class="sidebar-left panel">
+        <h2>Workflow Navigator</h2>
+        <div class="step active">Step 1: Define Goal</div>
+        <div class="step">Step 2: Select Materials</div>
+        <div class="step">Step 3: Configure Parameters</div>
+        <div class="step">Step 4: Review & Submit</div>
+        <hr />
+        <button>[Save Draft]</button>
+      </div>
+
+      <!-- Main Area: Interactive Configuration -->
+      <div class="main-area panel">
+        <h2>Main Configuration Area (Step 1 Active)</h2>
+
+        <!-- Content changes based on active step -->
+        <div id="step1-content">
+          <h3>Step 1: Project & Goal Definition</h3>
+          <p>
+            <strong>Goal Selector:</strong> Dropdown menu for high-level assay
+            types (e.g., "General Toxicity," "Dose Response").
+          </p>
+          <hr />
+          <h3>Modeling Service Input Panel</h3>
+          <p>AI Suggestion: 50 candidates prioritized by Model v4.2</p>
+          <button>[Auto-Fill Materials]</button>
+        </div>
+
+        <!-- Step 2-4 content would replace the above div in a real app -->
+      </div>
+
+      <!-- Right Sidebar: Summary & Validation -->
+      <div class="sidebar-right panel">
+        <h2>Summary & Validation</h2>
+        <h3>Experiment Summary</h3>
+        <p><strong>Name:</strong> Toxicity Screen #001</p>
+        <p><strong>Goal:</strong> 96-well plate test</p>
+        <hr />
+        <h3>Validation Status (Real-time)</h3>
+        <ul>
+          <li class="validation-item success">
+            ✅ <strong>Available:</strong> Compound X (enough stock)
+          </li>
+          <li class="validation-item error">
+            ❌ <strong>OUT OF STOCK:</strong> Cell Line A (0 units left)
+          </li>
+          <li class="validation-item warning">
+            ⚠️ <strong>Warning:</strong> Incubation time is outside model's
+            optimal range
+          </li>
+        </ul>
+        <hr />
+        <p><strong>Total Items:</strong> 5 materials selected</p>
+        <button
+          style="
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin-top: 20px;
+          "
+        >
+          [Submit Experiment]
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

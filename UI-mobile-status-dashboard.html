@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile App Dashboard UI Concept</title>
+    <style>
+      /* Mobile-first styling for layout simulation */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .mobile-container {
+        width: 100%;
+        max-width: 400px; /* Typical mobile width */
+        margin: 0 auto;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        padding: 15px;
+        background-color: #0056b3;
+        color: white;
+        text-align: center;
+        font-size: 1.1em;
+        font-weight: bold;
+      }
+      .content {
+        flex-grow: 1;
+        padding: 15px;
+        overflow-y: auto;
+      }
+      .card {
+        background-color: #fff;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border: 1px solid #eee;
+      }
+      .status-badge {
+        padding: 5px 10px;
+        border-radius: 12px;
+        font-size: 0.7em;
+        font-weight: bold;
+        float: right;
+      }
+      .badge-running {
+        background-color: #e0f7fa;
+        color: #007bff;
+      }
+      .badge-complete {
+        background-color: #e8f5e9;
+        color: #28a745;
+      }
+      .badge-failed {
+        background-color: #ffebee;
+        color: #dc3545;
+      }
+      .progress-bar-mock {
+        height: 5px;
+        background-color: #007bff;
+        width: 60%; /* Dynamic value */
+        margin-top: 10px;
+        border-radius: 2px;
+      }
+      .nav-bar {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+        border-top: 1px solid #ccc;
+        background-color: #fafafa;
+      }
+      .nav-item {
+        text-align: center;
+        font-size: 0.8em;
+        color: #666;
+        cursor: pointer;
+      }
+      .nav-item.active {
+        color: #0056b3;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mobile-container">
+      <div class="header">Lab Status Dashboard</div>
+
+      <div class="content">
+        <!-- Card 1: Running Job -->
+        <div class="card">
+          <strong>Tox Screen v1.2</strong>
+          <span class="status-badge badge-running">Running</span>
+          <p><small>Liquid Handler A | Step 12 of 24</small></p>
+          <div class="progress-bar-mock"></div>
+          <p><small>Est. Complete: 15 mins</small></p>
+        </div>
+
+        <!-- Card 2: Failed Job (High Priority Alert) -->
+        <div class="card" style="border-left: 5px solid #dc3545">
+          <strong>Binding Affinity (BA-112)</strong>
+          <span class="status-badge badge-failed">Failed</span>
+          <p><small>Incubator 1</small></p>
+          <p style="color: #dc3545; font-weight: bold">
+            <small>Error: Temp limit exceeded</small>
+          </p>
+        </div>
+
+        <!-- Card 3: Completed Job -->
+        <div class="card">
+          <strong>Efficacy Test v3.1</strong>
+          <span class="status-badge badge-complete">Complete</span>
+          <p><small>Plate Reader 3</small></p>
+          <p><small>Finished: 2 minutes ago</small></p>
+        </div>
+
+        <!-- Card 4: Queued Job -->
+        <div class="card">
+          <strong>Tox Screen v1.3</strong>
+          <span class="status-badge badge-running">Queued</span>
+          <p><small>Waiting for hardware</small></p>
+          <p><small>In queue position: 2</small></p>
+        </div>
+      </div>
+
+      <!-- Navigation Bar (Mockup) -->
+      <div class="nav-bar">
+        <div class="nav-item active">
+          <!-- Icon placeholder -->
+          <div>🏠</div>
+          Dashboard
+        </div>
+        <div class="nav-item">
+          <!-- Icon placeholder -->
+          <div>🔔</div>
+          Alerts
+        </div>
+        <div class="nav-item">
+          <!-- Icon placeholder -->
+          <div>✅</div>
+          Actions
+        </div>
+        <div class="nav-item">
+          <!-- Icon placeholder -->
+          <div>⚙️</div>
+          Profile
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

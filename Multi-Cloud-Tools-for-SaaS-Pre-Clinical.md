@@ -19,7 +19,7 @@ This layer manages connectivity between the physical lab hardware and the cloud 
 
 **. Suggested Service: AWS IoT Core**
 
-    -   **Why:** AWS IoT Core is a highly mature and scalable IoT platform. It provides robust device authentication, secure communication channels (MQTT, WSS), and a rules engine to ingest data streams directly into your Confluent Cloud event broker or data storage without needing a custom server solution. Its device management features are excellent for managing potentially hundreds of lab gateways across different client sites in a SaaS model.
+   -   **Why:** AWS IoT Core is a highly mature and scalable IoT platform. It provides robust device authentication, secure communication channels (MQTT, WSS), and a rules engine to ingest data streams directly into your Confluent Cloud event broker or data storage without needing a custom server solution. Its device management features are excellent for managing potentially hundreds of lab gateways across different client sites in a SaaS model.
 
 ## 3. Data & Storage Layer
 
